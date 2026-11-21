@@ -1,20 +1,149 @@
-# React + Vite
+# 👟 3D Shoe Showcase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive 3D shoe visualization built with **React** and **Three.js**.
 
-Currently, two official plugins are available:
+Explore a modern shoe presentation experience with interactive 3D rendering, smooth animations, and an immersive user interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- Interactive 3D shoe model
+- Real-time 3D rendering
+- Smooth animations and transitions
+- Modern and responsive user interface
+- Immersive product showcase
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies Used
 
+- React.js
+- Three.js
+- JavaScript
+- CSS
+- HTML
 
-## بهبودهای رابط کاربری سبد خرید
+## 🚀 Getting Started
 
-- کنترل انتخاب سایز و افزودن به سبد خرید در پایین صفحه قرار گرفته تا با پنل تغییر رنگ کفش تداخل نداشته باشد.
-- نشان عددی سبد خرید تعداد کل واحدها را نمایش می‌دهد و پس از ثبت موفق سفارش آزمایشی صفر/مخفی می‌شود.
-- نام کاربر واردشده در نوار بالای سایت کنار آیکون کاربری نمایش داده می‌شود.
-- ورود و ثبت سفارش همچنان نمایشی هستند و از سرور یا پرداخت واقعی استفاده نمی‌کنند.
+Follow these steps to run the project locally.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/paknejad-farimah/react-three-shoe.git
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd react-three-shoe
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in your terminal to view the project.
+
+## 📁 Project Structure
+
+```text
+react-three-shoe/
+├── public/
+├── src/
+├── package.json
+└── README.md
+```
+
+## 🎯 Purpose
+
+This project demonstrates how React and Three.js can be combined to create interactive and visually engaging 3D product experiences.
+
+## 👩‍💻 Author
+
+**Farimah Paknejad**
+
+GitHub: [@paknejad-farimah](https://github.com/paknejad-farimah)
+# 👟 3D Shoe Showcase
+
+An interactive 3D shoe visualization built with **React** and **Three.js**.
+
+Explore a modern shoe presentation experience with interactive 3D rendering, smooth animations, and an immersive user interface.
+
+## ✨ Features
+
+- Interactive 3D shoe model
+- Real-time 3D rendering
+- Smooth animations and transitions
+- Modern and responsive user interface
+- Immersive product showcase
+
+## 🛠️ Technologies Used
+
+- React.js
+- Three.js
+- JavaScript
+- CSS
+- HTML
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/paknejad-farimah/react-three-shoe.git
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd react-three-shoe
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in your terminal to view the project.
+
+## 📁 Project Structure
+
+```text
+react-three-shoe/
+├── public/
+├── src/
+├── package.json
+└── README.md
+```
+
+## 🎯 Purpose
+
+This project demonstrates how React and Three.js can be combined to create interactive and visually engaging 3D product experiences.
+
+## 👩‍💻 Author
+
+**Farimah Paknejad**
+
+GitHub: [@paknejad-farimah](https://github.com/paknejad-farimah)
+https://shoechangecolorr3f.netlify.app
+---
+
+⭐ If you like this project, consider giving it a star!
+---
+
+⭐ If you like this project, consider giving it a star!
