@@ -1,0 +1,26 @@
+.footer-section{
+    flex: 1;
+    min-width: 150px;
+    
+    margin-top: 20px;
+    padding: 15px 15px;
+    background-color: #34495e;
+    font-size: 20px;
+}
+.footer-section h3{
+    font-weight: 'bold';
+}
+.footer-bottom{
+    text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #34495e;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+.footer-bottom p{
+    padding-bottom: 5px;
+    font-size: 25px;
+    font-weight: 'bold';
+}
+
+

@@ -1,0 +1,590 @@
+/* ========================================
+   SHOE PAGE
+======================================== */
+
+.shoe-experience {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  background: #f5f6f7;
+  isolation: isolate;
+  overflow-x: clip;
+}
+
+/* ========================================
+   3D SHOE DISPLAY
+======================================== */
+
+.shoe-stage {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  height: min(72vh, 760px);
+  min-height: 420px;
+  flex: none;
+  background: #f5f6f7;
+}
+
+.shoe-stage canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  touch-action: pan-y;
+}
+
+/* ========================================
+   LEVA COLOR MENU - FIXED GLASS
+======================================== */
+
+/* Keep Leva above the page */
+#leva__root {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  z-index: 999999 !important;
+  visibility: visible !important;
+}
+
+/* Fixed panel */
+#leva__root > * {
+  position: fixed !important;
+  top: 12px !important;
+  right: 12px !important;
+  left: auto !important;
+  bottom: auto !important;
+
+  width: 220px !important;
+  max-width: calc(100vw - 24px) !important;
+  min-width: 0 !important;
+  height: auto !important;
+
+  margin: 0 !important;
+  transform: none !important;
+  box-sizing: border-box !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+
+  direction: ltr !important;
+  text-align: left !important;
+
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.28) !important;
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 16px !important;
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Leva controls */
+#leva__root input,
+#leva__root button,
+#leva__root select {
+  max-width: 100%;
+  box-sizing: border-box;
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Separators */
+#leva__root hr {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* ========================================
+   PURCHASE AREA
+======================================== */
+
+.shoe-purchase-area {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  flex: none;
+  box-sizing: border-box;
+  padding: 16px 20px 20px;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.shoe-purchase-controls {
+  width: min(100%, 560px);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.shoe-size-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shoe-purchase-controls label {
+  color: #222;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.shoe-purchase-controls select {
+  min-width: 76px;
+  min-height: 42px;
+  padding: 9px 12px;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #222;
+  font-size: 15px;
+}
+
+.btn-price {
+  min-height: 44px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background: #111827;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-price:hover {
+  background: #2c3e50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+}
+
+.btn-price:focus-visible,
+.shoe-purchase-controls select:focus-visible {
+  outline: 2px solid #2584ff;
+  outline-offset: 3px;
+}
+
+/* ========================================
+   SIMPLE LOADER
+======================================== */
+
+.shoe-loader {
+  width: 220px;
+  padding: 22px 18px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  color: #222;
+  text-align: center;
+  font-family: inherit;
+}
+
+.shoe-loader p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.shoe-loader span {
+  color: #666;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.shoe-loader-spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #222;
+  border-radius: 50%;
+  animation: shoe-loader-spin 0.8s linear infinite;
+}
+
+/* ========================================
+   ADVANCED LOADER
+======================================== */
+
+.shoe-loader-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse at center,
+    #10254b 0%,
+    #071329 48%,
+    #020713 100%
+  );
+  color: #f4f8ff;
+  font-family: Arial, sans-serif;
+  z-index: 100;
+}
+
+.shoe-loader-content {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: shoe-loader-appear 0.6s ease-out both;
+}
+
+.shoe-loader-ring {
+  width: clamp(130px, 25vw, 210px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 174, 255, 0.16);
+  border-top-color: #00c8ff;
+  border-right-color: #2584ff;
+  box-shadow:
+    0 0 24px rgba(0, 174, 255, 0.18),
+    inset 0 0 24px rgba(0, 174, 255, 0.08);
+  animation: shoe-loader-spin 2.4s linear infinite;
+}
+
+.shoe-loader-inner {
+  width: 78%;
+  height: 78%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle, #173d70, #08152d 72%);
+  box-shadow: inset 0 0 22px rgba(0, 174, 255, 0.2);
+}
+
+.shoe-loader-icon {
+  font-size: clamp(48px, 10vw, 76px);
+  filter: drop-shadow(0 0 14px rgba(0, 195, 255, 0.6));
+  animation: shoe-loader-float 1.8s ease-in-out infinite;
+}
+
+.shoe-loader-percent {
+  margin-top: 22px;
+  color: #55caff;
+  font-size: clamp(30px, 6vw, 42px);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.shoe-loader-content h2 {
+  margin: 12px 0 8px;
+  font-size: clamp(18px, 3vw, 25px);
+  line-height: 1.35;
+}
+
+.shoe-loader-content h2 span {
+  color: #18baff;
+}
+
+.shoe-loader-content p {
+  margin: 0;
+  color: #b7c9e7;
+  font-size: 15px;
+}
+
+.shoe-loader-progress {
+  width: 100%;
+  height: 9px;
+  margin-top: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(47, 150, 255, 0.7);
+  border-radius: 20px;
+  background: #09142a;
+}
+
+.shoe-loader-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #008cff, #00e0ff);
+  box-shadow: 0 0 14px rgba(0, 195, 255, 0.8);
+  transition: width 0.25s ease;
+}
+
+.shoe-loader-wait {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  color: #b7c9e7;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.shoe-loader-dot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #008cff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: shoe-loader-spin 0.8s linear infinite;
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes shoe-loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shoe-loader-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shoe-loader-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   TABLET AND MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+  .shoe-experience {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .shoe-stage {
+    height: 56vh;
+    height: 56dvh;
+    min-height: 320px;
+    max-height: 480px;
+  }
+
+  .shoe-purchase-area {
+    padding: 16px 14px 20px;
+  }
+
+  .shoe-purchase-controls {
+    width: 100%;
+    max-width: 480px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    align-items: center;
+    gap: 12px;
+  }
+
+  .shoe-size-control {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 7px;
+  }
+
+  .shoe-purchase-controls label {
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .shoe-purchase-controls select {
+    width: 100%;
+    min-width: 0;
+    height: 46px;
+    padding: 0 12px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: #f9fafb;
+    font-size: 16px;
+  }
+
+  .shoe-purchase-controls .btn-price {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    padding: 10px 8px;
+    white-space: normal;
+    line-height: 1.4;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .shoe-loader {
+    width: min(190px, calc(100vw - 40px));
+    padding: 18px 14px;
+  }
+
+  .shoe-loader p {
+    font-size: 13px;
+  }
+
+  .shoe-loader-overlay {
+    padding: 16px;
+  }
+
+  .shoe-loader-content {
+    max-width: 320px;
+  }
+
+  .shoe-loader-content p {
+    font-size: 13px;
+  }
+
+  .shoe-loader-progress {
+    margin-top: 20px;
+  }
+
+  /* Fixed glass menu on mobile */
+  #leva__root > * {
+    top: 10px !important;
+    right: 10px !important;
+    left: auto !important;
+    width: 175px !important;
+    max-width: calc(100vw - 20px) !important;
+  }
+}
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+  .shoe-stage {
+    height: 52vh;
+    height: 52dvh;
+    min-height: 290px;
+  }
+
+  .shoe-purchase-area {
+    padding: 12px 10px 16px;
+  }
+
+  .shoe-purchase-controls {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 8px;
+  }
+
+  .shoe-purchase-controls select {
+    padding: 0 8px;
+  }
+
+  .shoe-purchase-controls .btn-price {
+    padding: 10px 6px;
+    font-size: 13px;
+  }
+}
+
+/* Short mobile screens */
+
+@media (max-width: 600px) and (max-height: 700px) {
+  .shoe-stage {
+    height: 52vh;
+    height: 52dvh;
+    min-height: 280px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .shoe-loader-spinner,
+  .shoe-loader-ring,
+  .shoe-loader-icon,
+  .shoe-loader-dot,
+  .shoe-loader-content {
+    animation: none;
+  }
+}
+/* Leva fixed independently from page scroll */
+
+.shoe-color-controls {
+  position: fixed !important;
+  top: 70px !important;
+  right: 12px !important;
+  left: auto !important;
+  bottom: auto !important;
+
+  width: 220px !important;
+  z-index: 999999 !important;
+
+  direction: ltr !important;
+  pointer-events: auto !important;
+}
+body > #leva__root {
+  position: fixed !important;
+  top: 70px !important;
+  right: 12px !important;
+  left: auto !important;
+  bottom: auto !important;
+
+  width: 220px !important;
+  height: auto !important;
+
+  z-index: 2147483647 !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+#leva__root {
+  position: fixed !important;
+  top: 70px !important;
+  right: 12px !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 99999 !important;
+  transform: none !important;
+}
+
+@media (max-width: 768px) {
+  #leva__root {
+    top: 12px !important;
+    right: 8px !important;
+  }
+}
+
